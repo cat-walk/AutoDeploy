@@ -2,12 +2,12 @@ const http = require('http')
 const shell = require('shelljs')
 
 const PORT = 9988
-// const PATH = '../html'
+const PATH = '/home/ubuntu/workspace/summit-collection/'
 
 const deployServer = http.createServer((request, response) => {
   if (request.url.search(/deploy\/?$/i) > 0) {
     const commands = [
-      // `cd ${PATH}`,
+      `cd ${PATH}`,
       'git pull',
       'rm -rf node_modules',
       'sudo yarn install',
